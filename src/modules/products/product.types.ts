@@ -10,6 +10,21 @@ export interface ProductListItem {
   updatedAt: string;
 }
 
+export interface ProductListQuery {
+  limit: number;
+  category?: string;
+  cursorCreatedAt?: Date;
+  cursorId?: bigint;
+}
+
 export interface ProductListResult {
   data: ProductListItem[];
+  pagination: {
+    limit: number;
+    hasMore: boolean;
+    nextCursor: {
+      createdAt: string;
+      id: string;
+    } | null;
+  };
 }
