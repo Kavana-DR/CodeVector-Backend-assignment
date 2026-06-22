@@ -13,6 +13,7 @@ export interface ProductListItem {
 export interface ProductListQuery {
   limit: number;
   category?: string;
+  sort?: "price_asc" | "price_desc";
   cursorCreatedAt?: Date;
   cursorId?: bigint;
 }
